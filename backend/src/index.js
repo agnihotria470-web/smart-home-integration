@@ -12,7 +12,6 @@ const startServer = async () => {
             .then(() => console.log("Database response received!"))
             .catch((e) => console.log("Database delay:", e.message));
         
-        // Yeh line server ko turant chalu kar degi
         const port = process.env.PORT || 8000; 
         
         app.listen(port, () => {
