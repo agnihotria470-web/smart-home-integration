@@ -171,7 +171,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
     user.resetPasswordToken = resetPasswordToken;
     user.resetPasswordExpire = Date.now() + 10 * 600 * 1000; // 10 minutes
     await user.save({validateBeforeSave: false});
-    const resetUrl = `http://localhost:8000/api/v1/user/reset-password/${resetToken}`;
+    const resetUrl = `https://smart-home-backend-xyir.onrender.com/api/v1/user/reset-password/${resetToken}`;
     const message = `Reset your password by clicking on the link: ${resetUrl}`;
     try {
         await sendEmail({

@@ -8,8 +8,8 @@ import helmet from "helmet";
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
+  origin: ["http://localhost:5173", "https://smart-home-integration.vercel.app"],
+  credentials: true
 }));
 
 app.get("/", (req, res) => {
