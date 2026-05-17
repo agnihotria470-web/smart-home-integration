@@ -8,9 +8,15 @@ import helmet from "helmet";
 const app = express();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: "http://localhost:5173",
     credentials: true
-}))
+}));
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Backend Connected Successfully"
+  });
+});
 
 app.use(helmet({
     crossOriginOpenerPolicy: false,
@@ -35,7 +41,7 @@ import userRouter from './routes/user.routes.js'
 //routes declaration
 app.use("/api/v1/users", userRouter)
 
-//http://localhost:8000/api/v1/users/register
+//http://localhost:8000/register
 
 
 export { app };

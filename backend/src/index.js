@@ -2,21 +2,28 @@
 import dotenv from "dotenv"
 import connectDB from "./db/index.js";
 import { app } from './app.js';
-dotenv.config({
-    path: './.env'
-})
 
+dotenv.config();
 
+const startServer = async () => {
+    try {
+        // Hum database ko background mein daal rahe hain taaki server na ruke
+        connectDB()
+            .then(() => console.log("Database response received!"))
+            .catch((e) => console.log("Database delay:", e.message));
+        
+        // Yeh line server ko turant chalu kar degi
+        const port = process.env.PORT || 8000; 
+        
+        app.listen(port, () => {
+            console.log(`\n ⚙️  Server is running at port : ${port}`);
+        });
+    } catch (err) {
+        console.log("Server error: ", err);
+    }
+};
 
-connectDB()
-.then(() => {
-    app.listen(process.env.PORT || 8000, () => {
-        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
-    })
-})
-.catch((err) => {
-    console.log("MONGO db connection failed !!! ", err);
-})
+startServer();
 
 /*
 import express from "express"

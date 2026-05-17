@@ -268,7 +268,7 @@ const SignUpPage = () => {
 
         const { email, name, picture } = decoded;
 
-        const res = await fetch("http://localhost:8000/api/v1/users/signup-with-google", {
+        const res = await fetch("http://localhost:8000/signup-with-google", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

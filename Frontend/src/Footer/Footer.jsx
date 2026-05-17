@@ -64,15 +64,15 @@ export const Footer = () => {
             Helpline
           </h2>
           <ul className="space-y-1 sm:space-y-3 md:space-y-4 lg:space-y-5 xl:space-y-6 text-left">
-            <li className="font-montserrat text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg leading-[14px]">9548685176</li>
-            <li className="font-montserrat text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg leading-[14px]">deveshkumar<br className='md:hidden'/>8114@gmail.com</li>
+            <li className="font-montserrat text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg leading-[14px]">8791418904</li>
+            <li className="font-montserrat text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg leading-[14px]">ayush agnihotri<br className='md:hidden'/>8114@gmail.com</li>
           </ul>
         </div>
         </div>
       </div>
       <div className="container mx-auto mt-12 flex justify-center items-center pb-8">
         <p className="text-xs sm:text-xs md:text-sm lg:text-sm xl:text-sm text-black font-montserrat">
-          Designed by Devesh Kumar, Developed by Nizam
+          Designed by ayush agnihotri, Developed by ayush agnihotri
         </p>
       </div>
     </footer>

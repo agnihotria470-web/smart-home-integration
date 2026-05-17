@@ -32,12 +32,12 @@ const SignInPage = () => {
     : { mobileNumber : formData.contactInfo };
 
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/users/login`, {
+      const response = await fetch(`http://localhost:8000/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...data, password: formData.password }),
+        body: JSON.stringify({...data, password: formData.password }),
       });
 
       if(response.status === 404){
@@ -163,7 +163,7 @@ const SignInPage = () => {
       const { email, name, picture } = credentialResponseDecode;
 
       // Check if user exists
-      const checkRes = await fetch("http://localhost:8000/api/v1/users/check-user", {
+      const checkRes = await fetch("http://localhost:8000/check-user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const SignInPage = () => {
       const checkData = await checkRes.json();
 
       if (!checkData.exists) {
-        const res = await fetch("http://localhost:8000/api/v1/users/signup-with-google", {
+        const res = await fetch("http://localhost:8000/signup-with-google", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
